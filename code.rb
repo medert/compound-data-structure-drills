@@ -1,3 +1,5 @@
+require 'pry'
+
 people =
 {
   "Alia O'Conner PhD" => {
@@ -139,8 +141,27 @@ sets_of_people =
 # Write Ruby code to find out the answers to the following questions:
 
 # * How many people are in the first set of people?
+num_of_people = 0
+sets_of_people[0].each do |k,v|
+  num_of_people += 1
+  num_of_people += v["children"].size if v["children"] != nil
+end
+
+puts "There are #{num_of_people} people in the first set of people."
+
 # * How many people are in the second set of people?
+num_of_people = 0
+sets_of_people[1].each do |k,v|
+  num_of_people += 1
+  num_of_people += v["children"].size if v["children"] != nil
+end
+
+puts "There are #{num_of_people} people in the second set of people."
+
 # * What is Ruby Hessel's phone number?
+phone = sets_of_people[0]["Ruby Hessel"]["phone"]
+
+puts "Ruby Hessel's phone number is #{phone}"
 # * What are the names of Dr. Sigrid Nader's children?
 # * What is Bernard Feil's child's name?
 # * What company does Casandra Kemmer work for?
