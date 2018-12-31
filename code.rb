@@ -44,38 +44,38 @@ people =
 # Write Ruby code to find out the answers to the following questions:
 
 # * How many people are in `people` (excluding children)?
-puts people.size
+puts "People are in people #{people.size}"
 
 # * What are the names of all the people?
 people.each{|k,v| print k +', '}
 puts
 
 # * What is the phone number of Alia O'Conner PhD?
-puts "Alia O'Conner's phone is #{people["Alia O'Conner PhD"]["phone"]}"
+puts "\nAlia O'Conner's phone is #{people["Alia O'Conner PhD"]["phone"]}"
 
 # * How many children does Brian Heller have?
-puts "Alia O'Conner's phone is #{people["Brian Heller"]["children"].size}"
+puts "\nAlia O'Conner's phone is #{people["Brian Heller"]["children"].size}"
 
 # * What company does Dr. Adela DuBuque work for?
-puts "Dr. Adela DuBuque works for #{people["Dr. Adela DuBuque"]["company"]}"
+puts "\nDr. Adela DuBuque works for #{people["Dr. Adela DuBuque"]["company"]}"
 
 # * What are the names of the people who have children?
-puts "People that have children: "
+puts "\nPeople that have children: "
 people.each do |key,value|
   puts '- ' + key if value["children"] != nil
 end
 
 # * What are the names of the people who do not have children?
-puts "People that do not have children: "
+puts "\nPeople that do not have children: "
 people.each do |key,value|
   puts '- ' + key if value["children"] == nil
 end
 
 # * What is Brian Heller's child's name?
-puts "Brian Heller's child's name is #{people["Brian Heller"]["children"].join('')}"
+puts "\nBrian Heller's child's name is #{people["Brian Heller"]["children"].join('')}"
 
 # * What is Maryse Johns' first child's name?
-puts "Maryse Johns first child's name is #{people["Maryse Johns"]["children"][0]}"
+puts "\nMaryse Johns first child's name is #{people["Maryse Johns"]["children"][0]}"
 
 # * Dr. Adela DuBuque just had a baby named Tomas. How would you update the hash for this information?
 people["Dr. Adela DuBuque"].merge!("children" =>["Bert"])
@@ -147,7 +147,7 @@ sets_of_people[0].each do |k,v|
   num_of_people += v["children"].size if v["children"] != nil
 end
 
-puts "There are #{num_of_people} people in the first set of people."
+puts "\nThere are #{num_of_people} people in the first set of people."
 
 # * How many people are in the second set of people?
 num_of_people = 0
@@ -156,22 +156,29 @@ sets_of_people[1].each do |k,v|
   num_of_people += v["children"].size if v["children"] != nil
 end
 
-puts "There are #{num_of_people} people in the second set of people."
+puts "\nThere are #{num_of_people} people in the second set of people."
 
 # * What is Ruby Hessel's phone number?
 phone = sets_of_people[0]["Ruby Hessel"]["phone"]
-puts "Ruby Hessel's phone number is #{phone}"
+puts "\nRuby Hessel's phone number is #{phone}"
 
 # * What are the names of Dr. Sigrid Nader's children?
 children = sets_of_people[1]["Dr. Sigrid Nader"]["children"].join(", ")
-puts "Dr. Sigrid Nader's children's name are #{children}."
+puts "\nDr. Sigrid Nader's children's name are #{children}."
 
 # * What is Bernard Feil's child's name?
 child = sets_of_people[0]["Bernard Feil"]["children"].join(", ")
-puts "Bernard Feil child's name is #{child}."
+puts "\nBernard Feil child's name is #{child}."
 
 # * What company does Casandra Kemmer work for?
 work = sets_of_people[0]["Casandra Kemmer"]["company"]
-puts "Casandra Kemmer works at #{work}."
+puts "\nCasandra Kemmer works at #{work}."
 
 # * Who are all the people in the first set that have an `m` in their Company names?
+
+num_of_people = 0
+puts
+puts "\nThe people in the first set that have an `m` in their Company names:"
+sets_of_people[0].each do |k,v|
+  puts k if v["company"].downcase.include?("m")
+end
