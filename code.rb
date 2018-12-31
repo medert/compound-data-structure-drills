@@ -167,5 +167,11 @@ children = sets_of_people[1]["Dr. Sigrid Nader"]["children"].join(", ")
 puts "Dr. Sigrid Nader's children's name are #{children}."
 
 # * What is Bernard Feil's child's name?
+child = sets_of_people[0]["Bernard Feil"]["children"].join(", ")
+puts "Bernard Feil child's name is #{child}."
+
 # * What company does Casandra Kemmer work for?
+work = sets_of_people[0]["Casandra Kemmer"]["company"]
+puts "Casandra Kemmer works at #{work}."
+
 # * Who are all the people in the first set that have an `m` in their Company names?
