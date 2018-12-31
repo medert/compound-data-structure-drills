@@ -160,9 +160,12 @@ puts "There are #{num_of_people} people in the second set of people."
 
 # * What is Ruby Hessel's phone number?
 phone = sets_of_people[0]["Ruby Hessel"]["phone"]
-
 puts "Ruby Hessel's phone number is #{phone}"
+
 # * What are the names of Dr. Sigrid Nader's children?
+children = sets_of_people[1]["Dr. Sigrid Nader"]["children"].join(", ")
+puts "Dr. Sigrid Nader's children's name are #{children}."
+
 # * What is Bernard Feil's child's name?
 # * What company does Casandra Kemmer work for?
 # * Who are all the people in the first set that have an `m` in their Company names?
